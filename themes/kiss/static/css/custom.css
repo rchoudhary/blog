@@ -1,0 +1,74 @@
+.content h1 code,
+.content h2 code,
+.content h3 code,
+.content h4 code,
+.content h5 code,
+.content h6 code {
+  background-color: #f8f8f8;
+}
+
+.content h1 {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 0px;
+}
+
+.content h1#summary {
+    margin-bottom: 20px;
+}
+
+.content h2 {
+    font-size: 24px;
+}
+
+.content h3 {
+    font-size: 18px;
+}
+
+.content .figure-caption {
+    font-size: 14px;
+    text-align: center;
+    font-style: italic;
+}
+
+.icon {
+    width: 35px;
+}
+
+.num-circle {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-family: Arial;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    font-size: 15px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.content .toc-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+#site-title :before {
+    content: " ";
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    background-image: url(/logo.png);
+    color: transparent;
+    background-size: 60px;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 15px;
+}
+
+#site-title:hover :before {
+    background-image: url(/logo_dark.png);
+}

@@ -1,0 +1,14 @@
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://www.github.com/{{ .Site.Params.Social.github }}">{{ .Site.Author.name }}</a> {{ now.Format "2006" }}</p>
+    <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
+  </div>
+</section>
+{{ if .Site.GoogleAnalytics }}
+  {{ template "_internal/google_analytics_async.html" . }}
+{{ end }}
+{{ if .Site.Params.matomoAnalytics }}
+  {{- partial "analytics/matomo" . -}}
+{{ end }}
+</body>
+</html>

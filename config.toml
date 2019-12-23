@@ -1,0 +1,20 @@
+baseurl = "https://rchoudhary.github.io"
+languageCode = "en"
+title = "Null Pointers"
+theme = "kiss"
+
+# Number of posts per page
+Paginate = 10
+enableRobotsTXT = true
+
+[Author]
+name = "Rutvik Choudhary"
+
+[params.assets]
+customCSS = ["css/custom.css"]
+
+[params.social]
+github = "rchoudhary"
+
+[taxonomies]
+tag ="tags"
