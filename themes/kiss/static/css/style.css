@@ -246,7 +246,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, sans-serif;
+  font-family: 'Source Code Pro', monospace;
 }
 button,
 input[type="button"] {
@@ -275,7 +275,7 @@ input[type="button"] {
 }
 html {
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 20px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   min-width: 300px;
@@ -288,14 +288,13 @@ button,
 input,
 select,
 textarea {
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro",
-    "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 code,
 pre {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
-  font-family: "Source Code Pro", Monaco, Inconsolata, monospace;
+  font-family: 'Source Code Pro', monospace;
   line-height: 1.25;
 }
 body {
@@ -1150,7 +1149,7 @@ a.box:active {
   margin-top: 1em;
 }
 .content p {
-	text-align: justify;
+	text-align: left;
 }
 .content blockquote:not(:last-child),
 .content ol:not(:last-child),
@@ -3631,7 +3630,7 @@ a.box:active {
 .highlight {
   padding: 7px;
   background-color: #fff9c9;
-  color: #586e75;
+  /* color: #586e75; */
 }
 .highlight .c {
   color: #93a1a1;
@@ -5579,7 +5578,7 @@ article + article {
   margin-top: 80px;
 }
 .content {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.75;
 }
 .media-content .subtitle + .title {
@@ -5607,7 +5606,7 @@ article + article {
   color: #69707a;
 }
 .title {
-  font-size: 24px;
+  font-size: 32px;
 }
 .title a {
   color: #222324;
@@ -5617,7 +5616,6 @@ article + article {
 }
 code {
   color: inherit;
-  font-size: 90%;
 }
 .content h1::before,
 .content h2::before,
@@ -5676,7 +5674,6 @@ code {
 }
 .content p > code,
 .content > code {
-  font-size: 90%;
   padding: 2px 4px;
   margin: 0 2px;
   border: 1px solid #ddd;

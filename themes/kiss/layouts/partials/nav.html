@@ -3,26 +3,27 @@
     <nav class="nav">
       <div class="nav-left">
         <a class="nav-item" id="site-title" href="{{ .Site.BaseURL }}">
-            <h1 style="font-size: 36px;">{{ .Site.Title }}</h1>
+            <h1>{{ .Site.Title }}</h1>
         </a>
       </div>
       <div class="nav-right">
         <nav class="nav-item level is-mobile">
           {{- range $platform, $username := .Site.Params.social -}}
-          {{- if $username -}}
-            <a class="level-item" aria-label="{{ $platform }}" href='{{ print ( index $.Site.Data.theme.social.base $platform ) $username }}' target='_blank' rel='noopener'>
-            <span class="icon">
-              <i class>
-                {{- partial "svg/icons" $platform -}}
-              </i>
-            </span>
-          </a>
-          {{- end -}}
+            {{- if $username -}}
+              <a class="level-item" aria-label="{{ $platform }}" href='{{ print ( index $.Site.Data.theme.social.base $platform ) $username }}' target='_blank' rel='noopener'>
+              <span class="icon">
+                <i class>
+                  {{- partial "svg/icons" $platform -}}
+                </i>
+              </span>
+            </a>
+            {{- end -}}
           {{- end -}}
         </nav>
       </div>
     </nav>
 
+    <!--
     <nav class="nav">
       {{ if (isset .Site.Params "sections_left" ) }}
         <div class="nav-left">
@@ -48,6 +49,7 @@
         </div>
       {{ end }}
     </nav>
+    -->
 
   </div>
 </section>
