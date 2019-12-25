@@ -18,3 +18,6 @@ github = "rchoudhary"
 
 [taxonomies]
 tag ="tags"
+
+[params.info]
+enableSocial = true
