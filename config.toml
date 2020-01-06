@@ -24,3 +24,8 @@ enableSocial = true
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[markup]
+  [markup.highlight]
+    style = "github"
+    lineNos = true
