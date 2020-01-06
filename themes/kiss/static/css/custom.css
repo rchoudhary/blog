@@ -30,11 +30,17 @@
     height: auto;
 }
 
-.content .figure-caption {
+.content figcaption p {
     font-size: 18px;
     text-align: center;
     font-style: italic;
     color: #8a8a8a;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.content figcaption code {
+    font-style: normal;
 }
 
 .icon {
@@ -102,4 +108,9 @@
 
 footer {
     font-size: 14px;
+}
+
+.content .hl {
+    background-color: #fff9c9;
+    padding: 7px;
 }

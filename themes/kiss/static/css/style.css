@@ -3627,11 +3627,6 @@ a.box:active {
     width: 100%;
   }
 }
-.highlight {
-  padding: 7px;
-  background-color: #fff9c9;
-  /* color: #586e75; */
-}
 .highlight .c {
   color: #93a1a1;
 }
