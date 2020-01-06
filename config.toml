@@ -14,7 +14,7 @@ name = "Rutvik Choudhary"
 customCSS = ["css/custom.css"]
 
 [params.social]
-github = "rchoudhary"
+#github = "rchoudhary"
 
 [taxonomies]
 tag ="tags"
