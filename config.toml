@@ -21,3 +21,6 @@ tag ="tags"
 
 [params.info]
 enableSocial = true
+
+[markup.goldmark.renderer]
+unsafe = true
