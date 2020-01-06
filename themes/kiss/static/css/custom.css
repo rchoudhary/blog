@@ -53,13 +53,13 @@
     color: white;
     font-weight: bold;
     font-family: Arial;
-    width: 22px;
-    height: 22px;
-    border-radius: 11px;
-    font-size: 15px;
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    font-size: 16px;
     text-align: center;
     display: inline-block;
-    margin-right: 6px;
+    margin-right: 8px;
 }
 
 .content .toc-link {
