@@ -9,14 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         tocLink.innerHTML = 'Back to Table of Contents'
         item.parentNode.insertBefore(tocLink, item.nextSibling)
     })
-
-    let toc = document.getElementById('TableOfContents')
-    let tocUL = toc.getElementsByTagName('ul')[0]
-    if (tocUL != null) {
-        let tocOL = document.createElement('ol')
-        tocOL.innerHTML = tocUL.innerHTML
-        tocUL.parentNode.replaceChild(tocOL, tocUL)
-    }})
+})
 
 window.onload = function() {
     document.body.style.display = 'block'
