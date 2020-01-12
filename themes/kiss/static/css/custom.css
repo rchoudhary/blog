@@ -7,21 +7,21 @@
   background-color: #f8f8f8;
 }
 
-.content h1 {
-    font-weight: 400;
+.content h2 {
+    font-weight: 300;
     font-size: 32px;
     margin-bottom: 0px;
 }
 
-.content h1#summary {
+.content h2#summary {
     margin-bottom: 20px;
 }
 
-.content h2 {
+.content h3 {
     font-size: 24px;
 }
 
-.content h3 {
+.content h4 {
     font-size: 18px;
 }
 

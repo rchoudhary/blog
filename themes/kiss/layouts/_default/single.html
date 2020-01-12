@@ -15,9 +15,8 @@
       <div class="related">{{ partial "related" . }}</div>
     {{ end }}
     <div class="content" id="content">
-      <h1 id="summary">Summary</h1>
       <p>{{ .Summary }}</p>
-      <h1 id="toc">Table of Contents</h1>
+      <h2 id="toc">Table of Contents</h1>
       {{ .TableOfContents }}
       {{ .Content }}
     </div>

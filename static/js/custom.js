@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     content = document.getElementById('content')
-    let titles = Array.from(content.getElementsByTagName('h1')).slice(2)
+    let titles = Array.from(content.getElementsByTagName('h2')).slice(1)
     titles.forEach(function (item, index) {
         item.innerHTML = (index + 1).toString() + '.&nbsp;&nbsp;' + item.innerText
         let tocLink = document.createElement('a')

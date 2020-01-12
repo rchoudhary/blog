@@ -27,6 +27,6 @@ unsafe = true
     style = "github"
     lineNos = true
   [markup.tableOfContents]
-    endLevel = 1
+    endLevel = 2
     ordered = true
-    startLevel = 1
+    startLevel = 2
