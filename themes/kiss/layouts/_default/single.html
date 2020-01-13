@@ -1,6 +1,6 @@
 {{ partial "header" . }}
 {{ partial "nav" . }}
-<section class="section">
+<main class="section">
   <div class="container">
     <div class="subtitle tags is-6 is-pulled-right">
       {{ if .Params.tags }}
@@ -21,5 +21,5 @@
       {{ .Content }}
     </div>
   </div>
-</section>
+</main>
 {{ partial "footer" . }}

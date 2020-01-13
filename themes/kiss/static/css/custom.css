@@ -17,12 +17,19 @@
     margin-bottom: 20px;
 }
 
+.content h2#toc {
+    margin-bottom: 20px;
+}
+
 .content h3 {
-    font-size: 24px;
+    font-weight: 300;
+    font-size: 26px;
+    margin-bottom: 0px;
 }
 
 .content h4 {
-    font-size: 18px;
+    font-size: 22px;
+    margin-top: 40px;
 }
 
 @media all and (max-width: 320px) and (min-height: 320px) {
@@ -51,6 +58,7 @@
 
 .content figcaption code {
     font-style: normal;
+    color: #777777;
 }
 
 .icon {
@@ -73,7 +81,7 @@
 
 .content .toc-link {
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 16px;
 }
 
@@ -123,4 +131,45 @@ footer {
 .content .hl {
     background-color: #fff9c9;
     padding: 7px;
+}
+
+ol {
+    counter-reset: item
+}
+
+ol li {
+    display: block
+}
+
+ol li:before {
+    content: counters(item, ".") ". ";
+    counter-increment: item
+}
+
+.content .aside {
+    border: 1px solid #ccc;
+    border-color: #d3d6db;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 40px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    margin-left: 6%;
+    background-color: #FBF9FF;
+}
+
+.content .aside p:first-child {
+    margin-top: 0px;
+    color: #b52323;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.content .aside p:first-child:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.highlight tr {
+    border: darkgray 1px solid;
 }
