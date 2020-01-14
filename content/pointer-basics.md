@@ -2,7 +2,7 @@
 title = "Pointer Basics"
 date = 2020-01-12T16:09:46-06:00
 draft = true
-summary = "Pointers are a notoriously tricky topic when learning C and C++. I believe that some basic visualizations will help the harder aspects quite a bit simpler. In this first article, we'll look at what a pointer is, how to make one, and the very beginnings of how to use them. In later articles, we'll start exploring more advanced usages."
+summary = "Pointers are a notoriously tricky topic when learning C and C++. I believe that some basic visualizations will help the harder aspects quite a bit simpler. In this first article, we'll look at what a pointer is, how to make one, and the very beginnings of how to use them. We will also introduce the way that we'll visualize pointers from here on out. In later articles, we'll start exploring more advanced usages."
 +++
 
 ## "Normal" Variables (A Quick Refresher)
@@ -460,7 +460,7 @@ Null Pointers in C++11
 
 So in C and all versions of C++ before C++11, people would declare null pointers by assigning `0` or `NULL` to a pointer. In C++11 and beyond, it is recommended to instead use the keyword `nullptr` like so:
 
-```
+```cpp
 int *p = nullptr; // A null pointer, the modern C++ way!
 ```
 
@@ -537,7 +537,7 @@ This prevents you from writing code like this:
 ```cpp
 int main() {
     int x = 82;
-    const int* p = &x; // a pointer with const pointee
+    const int* p = &x; // A pointer with a const pointee
     *p = 29; // ILLEGAL!!
 }
 ```

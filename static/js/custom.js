@@ -55,10 +55,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
             })
             hidden = !hidden
             if (hidden) {
-                aside.style.paddingBottom = "10px";
+                aside.style.paddingBottom = "0px";
             }
             else {
-                aside.style.paddingBottom = "40px";
+                aside.style.paddingBottom = "25px";
             }
         }
     })
@@ -72,6 +72,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
         link.target = '_blank'
         link.rel = 'noopener noreferrer'
+        link.setAttribute('aria-label', 'Opens in new tab/window')
     })
 
     let images = Array.from(content.getElementsByTagName('img'))

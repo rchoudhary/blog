@@ -4,7 +4,7 @@
 .content h4 code,
 .content h5 code,
 .content h6 code {
-  background-color: #f8f8f8;
+  background-color: transparent;
 }
 
 .content h2 {
@@ -151,15 +151,16 @@ ol li:before {
     border-color: #d3d6db;
     margin-top: 40px;
     margin-bottom: 40px;
-    padding: 40px;
-    padding-top: 30px;
+    padding: 25px;
+    padding-top: 25px;
     padding-bottom: 0px;
     margin-left: 6%;
-    background-color: #FBF9FF;
+    background-color: #FFFEF2;
 }
 
 .content .aside p:first-child {
     margin-top: 0px;
+    margin-bottom: 25px;
     color: #b52323;
     font-size: 22px;
     font-weight: 300;
