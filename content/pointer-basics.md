@@ -11,7 +11,9 @@ To understand pointers, we must first revisit a familiar concept: the variable! 
 
 > A variable or scalar is a storage address (identified by a memory address) paired with an associated symbolic name, which contains some known or unknown quantity of information referred to as a value
 
-Put more briefly, a variable is a chunk of memory that has a name and contains some data. In C and C++, variables also have a _type_ associated with them that tells you how big a chunk of memory the variable takes up and what kind of data the chunk contains.
+Put more briefly, <span class="hl">a **variable** is a chunk of memory that has a name and contains some data.</span>
+
+In C and C++, variables also have a _type_ associated with them that tells you how big a chunk of memory the variable takes up and what kind of data the chunk contains.
 
 Every uniquely named variable corresponds to a _unique_ chunk of memory!
 
@@ -114,11 +116,11 @@ Here is what the definition of a pointer is, according to our boi [Wikipedia](ht
 
 > A pointer is a programming language object that stores the memory address of another value located in computer memory.
 
-Put another way, <span class="hl">a pointer is basically a variable that contains a memory address</span>.
+Put another way, <span class="hl">a **pointer** is basically a variable that contains a memory address</span>.
 
-That's it, there's honestly not much more to it!
+That's it!
 
-The definition may be simple, but the hard part is using pointers _correctly_. Keeping basics in mind will help make that part a lot easier though.
+The definition may be simple, but the hard part is using pointers _correctly_. Keeping basics in mind will help make that a lot easier though.
 
 But enough words, let's see some more code (which is also words I guess) and pictures!
 
@@ -138,7 +140,7 @@ This syntax is a little bit different than the syntax for a variable we saw earl
 
 This creates a chunk of memory and names it `p`. This chunk will also have a memory address associated with it.
 
-Now the type of that variable looks a little different than normal variables. We declared the type of the `p` to be `int*`. That `*` after the `int` means that `p` will contain the _address_ of _another_ variable whose type is `int`. We say that `p` is a **pointer** to an `int`.
+Now the type of that variable looks a little different than normal variables. We declared the type of the `p` to be `int*`. That `*` after the `int` means that `p` will contain the _address_ of _another_ variable whose type is `int`. We say **`p` is a pointer to an `int`**.
 
 <div class="aside">
 
@@ -186,7 +188,7 @@ It means that if I look at the _contents_ of `p` I'll see an address. If I go to
 
 So now we've declared `p` to be a pointer to an integer, but what address does it contain?
 
-The answer is, as of right now, we don't know! Remember that we don't know what uninitialized variables contain. That means that `p` looks like this right now:
+The answer is, as of right now, we don't know! Remember that this is the case when a variable is uninitialized. That means that `p` looks like this right now:
 
 {{< figure
   src="/images/pointer-basics/p_uninit.png#c"
@@ -238,7 +240,7 @@ Notice that the _contents_ of `p` are the same as the _address_ of `y`!
 
 Since `p` now contains the address of `y`, we say that **`p` points to `y`**.
 
-In general, <span class="hl">whenever a pointer contains the address of some variable, we say that it _points to_ that variable.</span>
+In general, <span class="hl">whenever a pointer contains the address of some variable, we say that it **points to** that variable.</span>
 
 For the sake of brevity, we'll refer the thing pointed to as the **pointee**. So in the previous snippet of code, `y` is the _pointee_ of `p`. It may not be a widely used term, but that's a shame because it's pretty efficient.
 
@@ -301,7 +303,7 @@ int main() {
 }
 ```
 
-We know that the _type_ of `p` is `int*`, which means that it contains the _address_ of an `int`. The important part is that `p` contains an _address_, and as stated at the very beginning, all addresses are 64 bits aka 8 bytes. Thus, we can conclude that the size of `p` is 8 bytes!
+We know that the _type_ of `p` is `int*`, which means that it contains the _address_ of an `int`. The important part is that `p` contains an _address_. On my computer, all addresses are 64 bits aka 8 bytes. Thus, we can conclude that the size of `p` is 8 bytes! For you that number might be different though. You can print out `sizeof(int*)` to see how big addresses are on your system.
 
 What about pointers that point to different kinds of variables? Consider this example:
 
@@ -562,15 +564,15 @@ int main() {
     int z = *p; // Assigning the contents of y to z using p
 
     if (y == z) {
-        cout << "yay me!" << endl;
+        cout << "it worked!" << endl;
     }
     else {
-        cout << "wtf" << endl;
+        cout << "everything i know about c++ is wrong" << endl;
     }
 }
 ```
 
-If you run that code, you should see `yay me!` printed out.
+If you run that code, you will see `it worked!` printed out.
 
 ...
 
@@ -618,9 +620,7 @@ Phew, that certainly was a lot! However, we're not done with dereferencing yet. 
 
 ### Writing With Pointers
 
-...we can write as well!
-
-Assigning to a dereferenced pointer means assigning to the pointee.
+...we can write as well! <span class="hl">Assigning to a dereferenced pointer means assigning to the pointee.</span>
 
 We're going to focus on this example:
 
@@ -756,9 +756,9 @@ Here's how we'll visualize a null pointer:
 
 That ∅ is the [null sign](https://en.wikipedia.org/wiki/Null_sign). Quite fitting for our purposes.
 
-Activity time!
+...
 
-This code from earlier crashes because we dereference a null pointer:
+We need to come up with a way to avoid the bad consequences of null pointers. For example, this code from earlier crashes because we dereference a null pointer:
 
 ```cpp
 #include <iostream>
@@ -944,99 +944,6 @@ Now, let's tweak the visuals to account for this `const`-ness. This is a good wa
 That blue thing is meant to be a lock... I'm not exactly the greatest artist in the world 😅
 
 Remember that the arrow signifies the relationship between `p` and `x`: `p` is a pointer to `x`, and `x` is the pointee of `p`. We have seen previously that this relationship can generally be used to observe the pointee or modify it. The lock on the arrow indicates that we can still use the relationship between pointer and pointee to observe, but not to modify.
-
-<div class="aside">
-
-Messing with `const` (super fun!)
-
-Let's have some more fun messing around with `const` things! Consider this code:
-
-```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int x = 82;
-
-    cout << " x = " << x << endl;
-    cout << endl;
-
-    const int* p = &x; // A pointer to x with a const pointee
-    int* q = (int*)p; // A pointer to x, but with a non-const pointee
-    *q = 29; // NOT illegal!
-
-    cout << " x = " << x << endl;
-    cout << "*p =" << *p << endl;
-    cout << "*q =" << *q << endl;
-}
-
-```
-
-The output of this code is
-
-```
- x = 82
-
- x = 29
-*p = 29
-*q = 29
-```
-
-This means that we successfully changed the value of `x`!
-
-The reason we pulled it off is that `p` is a `const int*` who contents are `&x` (the address of `x`). The type of `p` indicates we can't use `p` to change whatever is at memory location `&x`.
-
-However, we can copy the contents of `p` into another pointer `q` whose type is `int`. We're basically taking `&x` from `p` and putting it into `q` as well. However, `p` is of type `const int*` and we want `q` to be of type `int*`, so we need to do a cast to drop the `const`.
-
-Now since `q` points to `x` as well, we can use it to modify the contents of `x`!
-
-Now, what if `x` itself is `const`? Do our casting tricks still work? Consider this code:
-
-```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    const int x = 82;
-
-    cout << " x = " << x << endl;
-    cout << endl;
-
-    int* p = (int*)&x; // A pointer to a const int
-    *p = 29; // Will this work?
-
-    cout << " x = " << x << endl;
-    cout << "*p =" << *p << endl;
-    cout << *p << endl;
-}
-```
-
-The results are super interesting. First, we print the initial value of `x`. We then create a `int* p` which is pointer to `x`. Note that we had to cast `&x` with `(int*)` to remove the `const`. After that use `p` to attempt to change the value of `x` even though it's `const`. We then read `x` using the variable itself and using the pointer `p`. Here are the results of the code:
-
-```
- x = 82
-
- x = 82
-*p = 29
-```
-
-What?!? `p` and `x` refer to the same memory location, how are they reading different values?! According to `p`, our nefarious code was successful. According to `x`, the purity of `const`-ness has not been violated.
-
-Unfortunately we have just run into **undefined behavior (aka UB)**. The C++ standard says that if you try to strip the `const` off of variables, there's no telling what exactly will happen. The behavior of the program from then on out is undefined.
-
-UB is pretty bad. Imagine if we had some `if (...)` statements that used `*p` to check the value of `x` and some `if (...)` statements that used `x` itself to check the value of `x`. They would have been inconsistent with each other, and the flow of our entire program could've been ruined!
-
-But wait, why is this example so much worse compared to the previous one where we stripped the `const` off of the pointer?
-
-The main thing we need to realize is that `x` names the memory location at `&x`, so whatever it says goes.
-
-In the first example, `x` was non-`const`, which means that the memory location `&x` is free to be read from or written to. `p` declared itself as `const int*`. That doesn't mean that the memory location it points to is read only, it just means that `p` promises not to modify it. `p` is essentially self-censoring, and that's `p`'s problem, not `x`'s!
-
-`q` on the other hand takes the contents of `p` to get access to the same memory location, but it decides not to make the same `const` promise as `p`. This is perfectly fine because the memory location `&x` is not-inherently read-only so `q` is not breaking any laws.
-
-However, in the second example, `x` was declared `const` which means the memory location `&x` is meant to _truly_ be read only. Messing around with pointers gave us a way to hack our way around the restrictions, but after that, we're in uncharted waters...
-
-</div>
 
 ### `const` Pointer
 
