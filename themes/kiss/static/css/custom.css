@@ -1,3 +1,7 @@
+.container {
+    max-width: 70%;
+}
+
 .content h1 code,
 .content h2 code,
 .content h3 code,
@@ -7,10 +11,25 @@
   background-color: transparent;
 }
 
+.content {
+    font-size: 16px;
+}
+
 .content h2 {
     font-weight: 300;
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 0px;
+}
+
+.content h2:not(:first-child) {
+    font-weight: 300;
+    font-size: 28px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+
+.content h2 em {
+    font-weight: 300;
 }
 
 .content h2#summary {
@@ -23,37 +42,26 @@
 
 .content h3 {
     font-weight: 300;
-    font-size: 26px;
+    font-size: 24px;
     margin-bottom: 0px;
 }
 
 .content h4 {
-    font-size: 22px;
+    font-size: 18px;
     margin-top: 40px;
 }
 
-@media all and (max-width: 320px) and (min-height: 320px) {
-    .content img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media not all and (max-width: 320px) and (min-height: 320px) {
-    .content img {
-        width: 85%;
-        height: auto;
-    }
+.content img {
+    width: 100%;
 }
 
 .content figcaption p {
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
     font-style: italic;
     color: #8a8a8a;
     margin-bottom: 25px;
     text-align: center;
-    font-family: "Open Sans";
 }
 
 .content figcaption code {
@@ -110,22 +118,18 @@
 }
 
 .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
-    height: 0;
+    height: 54vh;
 }
 
 .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 96vh;
     height: 100%;
+    display: block;
+    margin: auto;
 }
 
 footer {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .content .hl {
@@ -185,4 +189,12 @@ aside p:first-child:hover {
 
 .highlight tr {
     border: darkgray 1px solid;
+}
+
+#TableOfContents {
+    margin-bottom: 1.5em;
+}
+
+.content p:not(:last-child) {
+    margin-bottom: 0.8em;
 }
