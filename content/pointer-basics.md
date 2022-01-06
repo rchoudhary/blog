@@ -2,6 +2,7 @@
 title = "Pointers on Pointers: The Basics"
 date = 2020-06-09
 summary = "In this article we'll go over the very basics of pointers: what they are, how to make one, and the utmost basic way to use them. This guide is primarily intended for people learning C++ and are confused by pointers."
+draft = "true"
 +++
 
 ## "Normal" Variables (A Quick Refresher)
