@@ -1,0 +1,18 @@
+<div class="picture">
+  {{ if .Get "caption"}}
+  <figure>
+  {{ end }}
+    <picture>
+      <!-- Large screens -->
+      <source media="(min-width: 1000px)" srcset="{{ .Get "src" }}_padded_extra.{{ .Get "type" }}">
+      <!-- Medium screens -->
+      <source media="(min-width: 750px) and (max-width: 1000px)" srcset="{{ .Get "src" }}_padded.{{ .Get "type" }}">
+      <!-- Small screens -->
+      <source media="(max-width: 750px)" srcset="{{ .Get "src" }}.{{ .Get "type" }}">
+      <img data-original="{{ .Get "src" }}.{{ .Get "type" }}" alt="{{ .Get "alt" }}">
+    </picture>
+  {{ if .Get "caption"}}
+    <figcaption><p>{{ .Get "caption" | markdownify }}</p></figcaption>
+  </figure>
+  {{ end }}
+</div>
