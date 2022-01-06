@@ -146,7 +146,7 @@ ol li:before {
     counter-increment: item
 }
 
-.content .aside {
+aside {
     border: 1px solid #ccc;
     border-color: #d3d6db;
     margin-top: 40px;
@@ -158,7 +158,7 @@ ol li:before {
     background-color: #FFFEF2;
 }
 
-.content .aside p:first-child {
+aside p:first-child {
     margin-top: 0px;
     margin-bottom: 25px;
     color: #b52323;
@@ -166,10 +166,22 @@ ol li:before {
     font-weight: 300;
 }
 
-.content .aside p:first-child:hover {
+aside p:first-child:hover {
     cursor: pointer;
     text-decoration: underline;
 }
+
+.aside-closer {
+    color: #b52323;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.aside-closer-text:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 
 .highlight tr {
     border: darkgray 1px solid;

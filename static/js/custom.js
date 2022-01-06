@@ -6,6 +6,13 @@ function getTOCLink() {
     return tocLink
 }
 
+function getAsideCloser() {
+    let asideCloser = document.createElement('p')
+    asideCloser.className = 'aside-closer'
+    asideCloser.innerHTML = '<span class="aside-closer-text">Close</span>'
+    return asideCloser
+}
+
 window.addEventListener('DOMContentLoaded', (event) => {
     content = document.getElementById('content')
 
@@ -41,8 +48,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
         item.parentNode.insertBefore(tocLink, item.nextSibling)
     })
 
-    let asides = Array.from(content.getElementsByClassName('aside'))
+    let asides = Array.from(content.getElementsByTagName('aside'))
     asides.forEach(function (aside, index) {
+        let asideCloser = getAsideCloser()
+        aside.appendChild(asideCloser)
         let asideTitle = Array.from(aside.children)[0]
         let everythingElse = Array.from(aside.children).slice(1)
         let hidden = true
@@ -61,6 +70,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 aside.style.paddingBottom = "25px";
             }
         }
+        asideCloser.onclick = function () {
+            everythingElse.forEach(function (otherChild, index) {
+                otherChild.hidden = !hidden
+            })
+            hidden = !hidden
+            if (hidden) {
+                aside.style.paddingBottom = "0px";
+            }
+            else {
+                aside.style.paddingBottom = "25px";
+            }
+            asideTitle.scrollIntoView()
+        }
+
     })
 
     let links = Array.from(content.getElementsByTagName('a'))
