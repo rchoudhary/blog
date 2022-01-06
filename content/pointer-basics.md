@@ -141,7 +141,7 @@ This creates a chunk of memory and names it `p`. This chunk will also have a mem
 
 Now the type of that variable looks a little different than normal variables. We declared the type of the `p` to be `int*`. That `*` after the `int` means that `p` will contain the _address_ of _another_ variable whose type is `int`. We say **`p` is a pointer to an `int`**.
 
-<div class="aside">
+<aside>
 
 A Note on Syntax
 
@@ -179,7 +179,7 @@ int *px, *py, *pz;
 
 Rather than use that syntax though, I just declare pointers on separate lines.
 
-</div>
+</aside>
 
 What does it mean for `p` to contain the address of an `int`?
 
@@ -323,7 +323,7 @@ The type of `pi` is `int*` (aka pointer to `int`), and the type of `pc` is `char
 
 I've put the answer in the aside section below to give you a chance to work it out for yourself 😉
 
-<div class="aside">
+<aside>
 
 Answer to the question above
 
@@ -339,7 +339,7 @@ The `char` in `char*` and the `int` in `int*` refer to the type of the variable 
 
 [This sample program should help drive the point home](https://repl.it/@rchoudhary/PointerSizes).
 
-</div>
+</aside>
 
 ### Mismatching Types
 
@@ -377,7 +377,7 @@ Well this is where pointers stop acting _just_ like variables. A `float*` and an
 
 Let's suppose that I could assign `&e` to `p`. `&e` is of type `float*`, which means that if I go to that address in memory, I expect to see a `float`. But `p`, which contains `&e` now, is of type `int*`. That means if I go to the address contained in `p`, I expect to find an `int`! So the memory location `&e` supposedly contains an `int` and a `float`, which is a contradiction! Thus we cannot allow `&e` to be assigned to `p`.
 
-<div class="aside">
+<aside>
 
 Forcing a square peg into a round hole...
 
@@ -395,7 +395,7 @@ int main() {
 
 Forcing a cast like that can be either cool or bad depending on what you do with it. We'll talk about this more in a later article. For now, don't force the square peg into the round hole!!
 
-</div>
+</aside>
 
 ### Reading With Pointers
 
@@ -603,7 +603,7 @@ c = @
 
 I'll leave it up to you to figure out what's going on... 😏
 
-<div class="aside">
+<aside>
 
 Why did that code work?
 
@@ -611,7 +611,7 @@ Why did that code work?
 
 `char` and `int` are converted back and forth using the ascii table. According to the table, `64` is the ascii value for the `'@'` character, which explains the output.
 
-</div>
+</aside>
 
 ...
 
@@ -773,15 +773,15 @@ How can we check that the pointer is _not_ null before calling `cout`?
 
 Give it a thought, if you need help, there's a hint below...
 
-<div class="aside">
+<aside>
 
 Hint for detecting a null pointer
 
 What value do null pointers contain?
 
-</div>
+</aside>
 
-<div class="aside">
+<aside>
 
 Answer to detecting a null pointer
 
@@ -859,7 +859,7 @@ Now personally, I'm gonna use the `if (!p)` syntax for brevity. But I wanted to 
 
 JK I'm hardly ever gonna check whether pointers are null throughout this series... 🙈
 
-</div>
+</aside>
 
 ## Pointers and `const`-ness
 
@@ -974,7 +974,7 @@ We can represent a `const` pointer like so:
 
 The blue lock on the contents of `p` indicates that we may observe the contents of `p` (i.e. we can read it), but we may not modify them. Since the contents control where `p` points, this is akin to saying that we may not change where `p` points.
 
-<div class="aside">
+<aside>
 
 Comparing this to normal variables
 
@@ -984,7 +984,7 @@ You don't get to then change what chunk of memory the name is attached to. If I 
 
 So having this second way to use `const` isn't an extra degree of flexibility for pointers. Rather the ability to not have to use `const` this way is the freedom awarded to pointers.
 
-</div>
+</aside>
 
 ### Remembering Where to Put the `const`
 
