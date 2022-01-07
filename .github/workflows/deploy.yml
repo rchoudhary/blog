@@ -29,4 +29,5 @@ jobs:
           external_repository: rchoudhary/rchoudhary.github.io
           publish_dir: ./public
           user_name: rchoudhary
+          user_email: 4595638+rchoudhary@users.noreply.github.com
           publish_branch: master
